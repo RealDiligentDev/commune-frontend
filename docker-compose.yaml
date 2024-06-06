@@ -1,0 +1,17 @@
+---
+version: "2.1"
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    container_name: commune-frontend
+    shm_size: '4gb' # for the shared memory size
+    restart: unless-stopped
+  backend:
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    container_name: commune-backend
+    shm_size: '4gb' # for the shared memory size
+    restart: unless-stopped
